@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 // 기본 개발 틀
+// 1주치
 
 void main() {
   runApp(const MyApp());
