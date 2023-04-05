@@ -1,19 +1,43 @@
 import 'package:flutter/material.dart';
 
-// 기본 개발 틀
-// 1주치
+//App_project_1
 
 void main() {
-  runApp(const MyApp());
+  runApp(SplashScreen());
 }
 
-class first extends StatelessWidget {
-  const first({Key? key}) : super(key: key);
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
+      home: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/CPU.jpg',
+                    width: 200,
+                  ),
+                  CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation(
+                      Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
