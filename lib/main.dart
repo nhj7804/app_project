@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:app_p/Splash_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -23,10 +21,119 @@ class MyApp extends StatelessWidget {
         } else {
           return MaterialApp(
             home: Scaffold(
+              backgroundColor: Colors.grey,
               appBar: AppBar(
                 title: Text('CPU'),
               ),
-              body: Text('BODY'),
+
+
+
+              body: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Container(
+                          width: 200,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '공지방',
+                              style: TextStyle(
+                                fontSize: 50,
+                                fontFamily: 'BlackHanSans',
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 200,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '공부방',
+                              style: TextStyle(
+                                fontSize: 50,
+                                fontFamily: 'BlackHanSans',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Container(
+                          width: 200,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '잡담방',
+                              style: TextStyle(
+                                fontSize: 50,
+                                fontFamily: 'BlackHanSans',
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 200,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '소통방',
+                              style: TextStyle(
+                                fontSize: 50,
+                                fontFamily: 'BlackHanSans',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Container(
+                          width: 200,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                        Container(
+                          width: 200,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
               bottomNavigationBar: BottomAppBar(
                 child: Text('BOTTOM'),
               ),
