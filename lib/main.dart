@@ -1,43 +1,44 @@
+import 'package:app_p/Splash_Screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 //App_project_1
 
 void main() {
-  runApp(SplashScreen());
+  runApp(MyApp());
 }
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/CPU.jpg',
-                    width: 200,
-                  ),
-                  CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation(
-                      Colors.grey,
+    return FutureBuilder(
+      future: Future.delayed(Duration(seconds: 3)),
+      builder: (context, AsyncSnapshot snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return MaterialApp(home: Splash_Screen());
+        } else {
+          return MaterialApp(
+            home: Scaffold(
+              body: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/CPU.jpg',
+                      width: 200,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ],
-          ),
-        ),
-      ),
+            ),
+          );
+        }
+      },
     );
   }
 }
