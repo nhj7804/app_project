@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:app_p/Splash_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -21,19 +23,12 @@ class MyApp extends StatelessWidget {
         } else {
           return MaterialApp(
             home: Scaffold(
-              body: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/CPU.jpg',
-                      width: 200,
-                    ),
-                  ],
-                ),
+              appBar: AppBar(
+                title: Text('CPU'),
+              ),
+              body: Text('BODY'),
+              bottomNavigationBar: BottomAppBar(
+                child: Text('BOTTOM'),
               ),
             ),
           );
